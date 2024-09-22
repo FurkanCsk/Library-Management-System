@@ -1,0 +1,15 @@
+﻿/* Custom CSS */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #d1cfcf; /* Arka plan rengi */
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #343a40; /* Koyu gri footer rengi */
+}

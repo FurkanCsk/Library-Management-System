@@ -1,0 +1,31 @@
+﻿@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+        <div class="card text-center" style="width: 50vw;">
+            <div class="card-body">
+                <h5 class="card-title">Welcome to the Library Management System</h5>
+                <p class="card-text">Please choose an option below.</p>
+
+                <div class="mb-4">
+                    <img src="https://cdn.dribbble.com/users/2367833/screenshots/7816190/media/b1aaf5c98510012b56422d1619dc62e8.gif" alt="Library GIF" class="img-fluid" style="max-height: 300px; width: auto;"> 
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <div class="text-center" style="flex: 1;">
+                        <div class="mb-2">
+                            <img src="https://cdn.vectorstock.com/i/500p/11/48/stack-of-colorful-books-icon-in-cartoon-style-vector-51211148.jpg" alt="Image 1" style="width: 120px; height: 120px;"> 
+                        </div>
+                        <a asp-controller="Book" asp-action="List" class="btn btn-danger" style="width: 100%;">View Books</a> 
+                    </div>
+
+                    <div class="text-center" style="flex: 1;">
+                        <div class="mb-2">
+                            <img src="https://img.freepik.com/free-vector/old-library-interior-composition-with-human-character-bearded-man-reading-book-table_1284-54511.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1725926400&semt=ais_hybrid" alt="Image 2" style="width: 120px; height: 120px;"> 
+                        </div>
+                        <a asp-controller="Author" asp-action="List" class="btn btn-danger" style="width: 100%;">View Authors</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

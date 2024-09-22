@@ -1,0 +1,52 @@
+﻿@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center text-dark">Library Management System About</h1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-dark text-light mb-4">
+                    <div class="card-header bg-danger text-white">
+                        System Features
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            The Library Management System is a comprehensive ASP.NET Core MVC application designed to manage all operations related to books, authors, and users.
+                        </p>
+                        <p>
+                            This project is designed to help you manage your library's book and author information with ease. It includes the following features:
+                        </p>
+                        <ul class="list-unstyled text-light">
+                            <li><i class="bi bi-check-circle text-success"></i> <strong>Book Management:</strong> Add, edit, delete, and view book details.</li>
+                            <li><i class="bi bi-check-circle text-success"></i> <strong>Author Management:</strong> Add, edit, delete, and view author details.</li>
+                            <li><i class="bi bi-check-circle text-success"></i> <strong>User Management:</strong> Manage user registration, login, and user information.</li>
+                            <li><i class="bi bi-check-circle text-success"></i> <strong>Advanced Interface:</strong> Modern and user-friendly interface using Bootstrap.</li>
+                            <li><i class="bi bi-check-circle text-success"></i> <strong>Form Validation:</strong> Form validation and error messages for user input.</li>
+                        </ul>
+                        <p>
+                            This application is designed based on Object-Oriented Programming (OOP) principles, ensuring extensibility and ease of maintenance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-light">
+                    <div class="card-header bg-danger text-white">
+                        Developer Information
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Furkan Coşkun</h5>
+                        <p class="card-text">
+                            <strong> Contact : <a href="https://linked.in/ffurkancoskun" target ="_blank" class="btn btn-danger">Linked.in</a></strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="@Url.Action("HomePage", "Home")" class="btn btn-danger">Return to Home</a>
+        </div>
+    </div>
+}

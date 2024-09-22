@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Library Management System</title>
+    <link href="~/lib/Bootstrap.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <partial name="_navbarPartial" />
+
+    @if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+    {
+        <div class="alert alert-warning fw-bold">
+            Welcome to the Library Management System -   @User.Claims.FirstOrDefault(x => x.Type == "FullName")?.Value || <strong>Join Date :</strong>@User.Claims.FirstOrDefault(x => x.Type == "joinDate")?.Value
+        </div>
+    }
+
+    <main role="main" class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-secondary py-3 mt-auto text-light">
+        <div class="container text-center">
+            <p class="mb-0">&copy; @DateTime.Now.Year - Copyrighted by Furkan Coşkun </p>
+        </div>
+    </footer>
+
+</body>
+</html>

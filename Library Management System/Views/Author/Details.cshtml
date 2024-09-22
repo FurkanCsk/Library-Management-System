@@ -1,0 +1,27 @@
+﻿@model Library_Management_System.Entities.AuthorEntity
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="@Model.ImageUrl" class="img-fluid" alt="Image for @Model.FirstName" style="height: 500px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p><span style="font-weight: bold;">First Name:</span> <span style="font-weight: normal;">@Model.FirstName</span></p>
+                    <p><span style="font-weight: bold;">Last Name:</span> <span style="font-weight: normal;">@Model.LastName</span></p>
+                    <p><span style="font-weight: bold;">Date of Birth:</span> <span style="font-weight: normal;">@Model.DateOfBirth.ToShortDateString()</span></p>
+                </div>
+                <div class="card mt-2" style="background-color: #d1cfcf" z>
+                    <div class="card-body">
+                        <h6 class="fw-bold">@Model.FirstName: Short Bio</h6>
+                        @Model.Bio
+                    </div>
+                </div>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
+                <a asp-controller="Author" asp-action="List" class="btn btn-dark mt-1">Back</a>
+            </div>
+        </div>
+    </div> 
+}

@@ -1,0 +1,48 @@
+﻿@model AuthorListViewModel
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+
+    <h3>Add Author</h3>
+
+    <form method="post" asp-controller="Author" asp-action="AddAuthor">
+
+        <div>
+            <label>First Name</label>
+            <input asp-for="FirstName" class="form-control" type="text" />
+            <span asp-validation-for="FirstName" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Last Name</label>
+            <input asp-for="LastName" class="form-control" type="text" />
+            <span asp-validation-for="LastName" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Date of Birth</label>
+            <input asp-for="DateOfBirth" class="form-control" type="text" />
+            <span asp-validation-for="DateOfBirth" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label asp-for="ImageUrl">Image Url</label>
+            <input asp-for="ImageUrl" class="form-control"></input>
+            <span class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Short Bio</label>
+            <input asp-for="Bio" class="form-control"></input>
+            <span asp-validation-for="Bio" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <button type="submit" class="btn btn-dark mt-2">Save</button>
+
+
+    </form>
+}

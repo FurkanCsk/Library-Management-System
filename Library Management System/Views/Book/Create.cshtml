@@ -1,0 +1,70 @@
+﻿@model BookCreateViewModel
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+
+    <h3>Add New Book</h3>
+
+    <form method="post" asp-controller="Book" asp-action="Create">
+
+        <div>
+            <label>Title</label>
+            <input asp-for="Title" class="form-control" type="text" />
+            <span asp-validation-for="Title" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Genre</label>
+            <input asp-for="Genre" class="form-control" type="text" />
+            <span asp-validation-for="Genre" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Publish Date</label>
+            <input asp-for="PublishDate" class="form-control" type="date" />
+            <span asp-validation-for="PublishDate" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>ISBN No</label>
+            <input asp-for="ISBN" class="form-control" type="text" />
+            <span asp-validation-for="ISBN" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Copies Available</label>
+            <input asp-for="CopiesAvailable" class="form-control"></input>
+            <span asp-validation-for="CopiesAvailable" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label asp-for="ImageUrl">ImageUrl</label>
+            <input asp-for="ImageUrl" class="form-control"></input>
+            <span asp-validation-for="ImageUrl" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Summary</label>
+            <input asp-for="Summary" class="form-control"></input>
+            <span asp-validation-for="Summary" class="text-danger mt-2 fw-bold"></span>
+
+        </div>
+
+        <div>
+            <label>Author</label>
+            <select asp-for="AuthorId" asp-items="@(ViewBag.Authors as IEnumerable<SelectListItem>)" class="form-control">
+                <option value=disabled selected>Please Select</option>
+            </select>
+            <span asp-validation-for="AuthorId" class="text-danger mt-2 fw-bold"></span>
+        </div>
+
+        <button type="submit" class="btn btn-dark mt-2">Save</button>
+
+
+    </form>
+}

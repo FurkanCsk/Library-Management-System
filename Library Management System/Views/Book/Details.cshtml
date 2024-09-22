@@ -1,0 +1,41 @@
+﻿@model Library_Management_System.Models.BookDetailsViewModel
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.ImageUrl" class="img-fluid" alt="Image for @Model.Title" style="height: 500px;">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title mb-3 fw-bold">@Model.Title</h5>
+                <p><span style="font-weight: bold;">ISBN No :</span> <span style="font-weight: normal;">@Model.ISBN</span></p>
+                <p><span style="font-weight: bold;">Genre :</span> <span style="font-weight: normal;">@Model.Genre</span></p>
+                <p><span style="font-weight: bold;">Copies Available :</span> <span style="font-weight: normal;">@Model.CopiesAvailable</span></p>
+                <p><span style="font-weight: bold;">Author:</span> <span style="font-weight: normal;">@Model.AuthorName</span></p>
+            </div>
+            <div class="card mt-2" style="background-color: #d1cfcf">
+                <div class="card-body">
+                    <h6 class="fw-bold">@Model.Title: Story and Reviews</h6>
+                    @if (!string.IsNullOrEmpty(Model.Summary))
+                    {
+                        var sentences = Model.Summary.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var sentence in sentences)
+                        {
+                            <hr />
+                            <p>@sentence</p>
+                        }
+                    }
+                    else
+                    {
+                        <p>Summary not available</p>
+                    }
+                </div>
+            </div>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
+            <a asp-controller="Book" asp-action="List" class="btn btn-dark mt-1">Back</a>
+        </div>
+    </div>
+</div>
+}

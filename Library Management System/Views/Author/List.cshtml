@@ -1,0 +1,36 @@
+﻿@model List<Library_Management_System.Entities.AuthorEntity>
+@if (@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value != null)
+{
+<h3 class="text-center mt-5 fw-bold">Author List Page</h3>
+<a asp-controller="Author" asp-action="AddAuthor" class="btn btn-dark fw-bold mb-3 mt-3">Add New Author</a>
+
+<hr />
+
+<table class="table table-bordered table-info table-dark">
+    <thead>
+    <th style="width:50px">Id</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th style="width:225px">Actions</th>
+    </thead>
+
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.Id</td>
+                <td>@author.FirstName</td>
+                <td>@author.LastName</td>
+                <td>
+                    <a asp-controller="Author" asp-action="Details" asp-route-id="@author.Id" class="btn btn-warning">Details</a>
+                    <a asp-controller="Author" asp-action="Edit" asp-route-id="@author.Id" class="btn btn-primary">Edit</a>
+
+                    <form asp-controller="Author" asp-action="Delete" asp-route-id="@author.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
