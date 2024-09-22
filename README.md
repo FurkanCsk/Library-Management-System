@@ -6,12 +6,9 @@ This project is an ASP.NET Core MVC application developed to manage the book and
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Usage](#usage)
-- [Installation](#installation)
 - [Configuration](#configuration)
 - [Testing](#testing)
 - [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 - Add, edit, and delete books and authors.
 - User registration and login functionalities.
@@ -78,6 +75,3 @@ The project can be run on a local server. Users can register as members and log 
 
 ## Contributing
 If you would like to contribute, please feel free to submit a pull request or report any issues.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
