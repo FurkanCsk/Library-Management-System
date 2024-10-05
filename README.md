@@ -75,3 +75,6 @@ The project can be run on a local server. Users can register as members and log 
 
 ## Contributing
 If you would like to contribute, please feel free to submit a pull request or report any issues.
+
+![image](https://github.com/user-attachments/assets/871bde12-a385-40a0-b688-0486fd7ea2e2)
+
